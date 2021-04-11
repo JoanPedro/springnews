@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @Entity
 @Table
-public class Categoria implements Serializable {
+public class Produto implements Serializable {
   private static final long serialVersionUID = 1L;
 
   @Id
@@ -18,15 +18,24 @@ public class Categoria implements Serializable {
   @Column
   private String nome;
 
-  @ManyToMany(mappedBy = "categorias")
-  private List<Produto> produtos = new ArrayList<>();
+  @Column
+  private Double preço;
 
-  public Categoria() {
+  @ManyToMany
+  @JoinTable(
+      name = "PRODUTO_CATEGORIA",
+      joinColumns = @JoinColumn(name = "produto_id"),
+      inverseJoinColumns = @JoinColumn(name = "categoria_id")
+  )
+  private List<Categoria> categorias = new ArrayList<>();
+
+  public Produto() {
   }
 
-  public Categoria(Integer id, String nome) {
+  public Produto(Integer id, String nome, Double preço) {
     this.id = id;
     this.nome = nome;
+    this.preço = preço;
   }
 
   public Integer getId() {
@@ -45,20 +54,28 @@ public class Categoria implements Serializable {
     this.nome = nome;
   }
 
-  public List<Produto> getProdutos() {
-    return produtos;
+  public Double getPreço() {
+    return preço;
   }
 
-  public void setProdutos(List<Produto> produtos) {
-    this.produtos = produtos;
+  public void setPreço(Double preço) {
+    this.preço = preço;
+  }
+
+  public List<Categoria> getCategorias() {
+    return categorias;
+  }
+
+  public void setCategorias(List<Categoria> categorias) {
+    this.categorias = categorias;
   }
 
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
-    Categoria categoria = (Categoria) o;
-    return id.equals(categoria.id);
+    Produto produto = (Produto) o;
+    return id.equals(produto.id);
   }
 
   @Override
