@@ -9,18 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/categories")
+@RequestMapping(value = "/categories")
 public class CategoriaResource {
 
-        @GetMapping()
-        public List<Categoria> listar() {
-            Categoria cat = new Categoria(1, "Informática");
-            Categoria cat2 = new Categoria(2, "Escritório");
+  @GetMapping()
+  public List<Categoria> listar() {
+    Categoria cat = new Categoria(1, "Informática");
+    Categoria cat2 = new Categoria(2, "Escritório");
 
-            List<Categoria> catList = new ArrayList<>();
-            catList.add(cat);
-            catList.add(cat2);
+    List<Categoria> catList = new ArrayList<>();
+    catList.add(cat);
+    catList.add(cat2);
 
-            return catList;
-        }
+    return catList;
+  }
 }
