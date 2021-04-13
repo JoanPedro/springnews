@@ -1,5 +1,6 @@
 package reviews.main.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import reviews.main.domain.enums.TipoCliente;
 
 import javax.persistence.*;
@@ -27,6 +28,7 @@ public class Cliente implements Serializable {
   @Column
   private Integer tipo;
 
+  @JsonManagedReference
   @OneToMany(mappedBy = "cliente")
   private List<Endereco> enderecos = new ArrayList<>();
 
