@@ -27,3 +27,7 @@ Bsrc/main/java/reviews/main/resources/exceptions/StandardError.java,2\d\2d48ee9
 -src/main/java/reviews/main/domain/Cidade.java,5\3\539d8fa5414a8fc313a6ed06d6adbcb05163b0a7
 ]
 -src/main/java/reviews/main/domain/Estado.java,6\3\638fe1cfb75288aff039d9bd08fc778b659cbba3
+m
+=src/main/java/reviews/main/repositories/CidadeRepository.java,9\8\982a0b00545da4e276d98de52ac20e9b2794650f
+m
+=src/main/java/reviews/main/repositories/EstadoRepository.java,c\a\ca08cd62d68cddd788d46d2b6e664dd33243afbb
