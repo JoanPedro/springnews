@@ -1,32 +1,52 @@
 package reviews.main.domain;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table
 public class Endereco implements Serializable {
   private static final long serialVersionUID = 1L;
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
+
+  @Column
   private String logradouro;
+
+  @Column
   private String numero;
+
+  @Column
   private String complemento;
+
+  @Column
   private String bairro;
+
+  @Column
   private String cep;
 
-  private Cliente cliete;
+  @ManyToOne
+  @JoinColumn(name="client_id")
+  private Cliente cliente;
+
+  @ManyToOne
+  @JoinColumn(name="cidade_id")
   private Cidade cidade;
 
   public Endereco() {
   }
 
-  public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep, Cliente cliete, Cidade cidade) {
+  public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep, Cliente cliente, Cidade cidade) {
     this.id = id;
     this.logradouro = logradouro;
     this.numero = numero;
     this.complemento = complemento;
     this.bairro = bairro;
     this.cep = cep;
-    this.cliete = cliete;
+    this.cliente = cliente;
     this.cidade = cidade;
   }
 
@@ -78,12 +98,12 @@ public class Endereco implements Serializable {
     this.cep = cep;
   }
 
-  public Cliente getCliete() {
-    return cliete;
+  public Cliente getCliente() {
+    return cliente;
   }
 
-  public void setCliete(Cliente cliete) {
-    this.cliete = cliete;
+  public void setCliente(Cliente cliete) {
+    this.cliente = cliete;
   }
 
   public Cidade getCidade() {
