@@ -17,3 +17,13 @@ n
 >src/main/java/reviews/main/repositories/ProdutoRepository.java,4\2\42fb3443bee1491f27a58202a3b525bfba305471
 ^
 .src/main/java/reviews/main/domain/Produto.java,d\4\d4468460a9e476664ab05b9956d80e0a0f083ea6
+{
+Ksrc/main/java/reviews/main/services/exceptions/ObjectNotFoundException.java,0\9\091e22606dbcfa45f2d8dea23c77d8bf9255cf4d
+}
+Msrc/main/java/reviews/main/resources/exceptions/ResourceExceptionHandler.java,d\4\d4122520385cf6f5278355b5fa549407547ed119
+r
+Bsrc/main/java/reviews/main/resources/exceptions/StandardError.java,2\d\2d48ee978ff3581f21948effcd95900b461b4972
+]
+-src/main/java/reviews/main/domain/Cidade.java,5\3\539d8fa5414a8fc313a6ed06d6adbcb05163b0a7
+]
+-src/main/java/reviews/main/domain/Estado.java,6\3\638fe1cfb75288aff039d9bd08fc778b659cbba3
