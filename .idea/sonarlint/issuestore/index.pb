@@ -13,3 +13,7 @@ p
 @src/main/java/reviews/main/repositories/CategoriaRepository.java,1\9\19f602b78fe1a6f88d6fe9d2e4fc9d83f776696a
 i
 9src/main/java/reviews/main/services/CategoriaService.java,1\f\1fc4510c1563b34728cac914ec8178d1a496f006
+n
+>src/main/java/reviews/main/repositories/ProdutoRepository.java,4\2\42fb3443bee1491f27a58202a3b525bfba305471
+^
+.src/main/java/reviews/main/domain/Produto.java,d\4\d4468460a9e476664ab05b9956d80e0a0f083ea6

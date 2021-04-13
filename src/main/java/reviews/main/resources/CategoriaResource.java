@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 import reviews.main.domain.Categoria;
 import reviews.main.services.CategoriaService;
 
-import java.util.Optional;
-
 @RestController
 @RequestMapping(value = "/categories")
 public class CategoriaResource {
@@ -20,7 +18,7 @@ public class CategoriaResource {
 
   @GetMapping(value = "/{id}")
   public ResponseEntity<Categoria> find(@PathVariable Integer id) {
-    Optional<Categoria> result = this.service.buscar(id);
-    return ResponseEntity.of(result);
+    Categoria result = this.service.find(id);
+    return ResponseEntity.ok(result);
   }
 }

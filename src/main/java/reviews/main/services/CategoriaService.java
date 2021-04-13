@@ -1,5 +1,6 @@
 package reviews.main.services;
 
+import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reviews.main.domain.Categoria;
@@ -13,7 +14,11 @@ public class CategoriaService {
   @Autowired
   private CategoriaRepository repository;
 
-  public Optional<Categoria> buscar(Integer id) {
-    return this.repository.findById(id);
+  public Categoria find(Integer id) {
+    Optional<Categoria> result = this.repository.findById(id);
+    return result.orElseThrow(() -> new ObjectNotFoundException(
+            Categoria.class.getName(), "Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()
+        )
+    );
   }
 }
