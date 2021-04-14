@@ -31,3 +31,17 @@ m
 =src/main/java/reviews/main/repositories/CidadeRepository.java,9\8\982a0b00545da4e276d98de52ac20e9b2794650f
 m
 =src/main/java/reviews/main/repositories/EstadoRepository.java,c\a\ca08cd62d68cddd788d46d2b6e664dd33243afbb
+h
+8src/main/java/reviews/main/domain/enums/TipoCliente.java,7\5\75168b541cae2a83a7a5c7aea6b221f2d7599359
+n
+>src/main/java/reviews/main/repositories/ClienteRepository.java,f\2\f20dbfd8f0d1ae2d20e97911ba8cbd17e024b850
+o
+?src/main/java/reviews/main/repositories/EnderecoRepository.java,d\2\d2c6b069b8c725d627754c05eaedaa764512b785
+^
+.src/main/java/reviews/main/domain/Cliente.java,5\3\53bc87daea3e6b273eac2afbaf99e15d18439139
+_
+/src/main/java/reviews/main/domain/Endereco.java,2\8\28b02963df9226e308b87b7191f734cab2fb721e
+i
+9src/main/java/reviews/main/resources/ClienteResource.java,0\2\02c4730cf25b810ef22fb1b95e384a019e46eaeb
+g
+7src/main/java/reviews/main/services/ClienteService.java,a\c\ac22ede04df9e046d39d4f02d0cc3a47d004c558
