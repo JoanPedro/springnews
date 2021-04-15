@@ -2,12 +2,20 @@ package reviews.main.domain;
 
 import reviews.main.domain.enums.EstadoPagamento;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
+@Entity
+@Table
 public class PagamentoComBoleto extends Pagamento {
   private static final long serialVersionUID = 1L;
 
+  @Column
   private Date dataVencimento;
+
+  @Column
   private Date dataPagamento;
 
   public PagamentoComBoleto() {}

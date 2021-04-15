@@ -2,9 +2,16 @@ package reviews.main.domain;
 
 import reviews.main.domain.enums.EstadoPagamento;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class PagamentoComCartao extends Pagamento {
   private static final long serialVersionUID = 1L;
 
+  @Column
   private Integer numeroDeParcelas;
 
   public PagamentoComCartao() {}
