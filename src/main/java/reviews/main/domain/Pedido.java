@@ -1,7 +1,6 @@
 package reviews.main.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -23,11 +22,9 @@ public class Pedido implements Serializable {
   @Column
   private Date instante;
 
-  @JsonManagedReference
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "pedido")
   private Pagamento pagamento;
 
-  @JsonManagedReference
   @ManyToOne
   @JoinColumn(name = "cliente_id")
   private Cliente cliente;

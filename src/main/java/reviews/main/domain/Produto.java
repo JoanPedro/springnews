@@ -1,6 +1,5 @@
 package reviews.main.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -22,7 +21,7 @@ public class Produto implements Serializable {
   @Column
   private Double preco;
 
-  @JsonBackReference
+  @JsonIgnore
   @ManyToMany
   @JoinTable(
       name = "PRODUTO_CATEGORIA",

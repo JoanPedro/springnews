@@ -1,6 +1,6 @@
 package reviews.main.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -30,13 +30,13 @@ public class Endereco implements Serializable {
   @Column
   private String cep;
 
-  @JsonBackReference
+  @JsonIgnore
   @ManyToOne
-  @JoinColumn(name="client_id")
+  @JoinColumn(name = "client_id")
   private Cliente cliente;
 
   @ManyToOne
-  @JoinColumn(name="cidade_id")
+  @JoinColumn(name = "cidade_id")
   private Cidade cidade;
 
   public Endereco() {

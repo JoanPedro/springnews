@@ -1,6 +1,6 @@
 package reviews.main.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import reviews.main.domain.enums.EstadoPagamento;
 
 import javax.persistence.*;
@@ -19,13 +19,14 @@ public abstract class Pagamento implements Serializable {
   @Column
   private Integer estado;
 
-  @JsonBackReference
+  @JsonIgnore
   @OneToOne
   @JoinColumn(name = "pedido_id")
   @MapsId
   private Pedido pedido;
 
-  public Pagamento() {}
+  public Pagamento() {
+  }
 
   public Pagamento(Integer id, EstadoPagamento estado, Pedido pedido) {
     this.id = id;
