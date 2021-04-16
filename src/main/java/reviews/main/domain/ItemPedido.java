@@ -1,15 +1,27 @@
 package reviews.main.domain;
 
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table
 public class ItemPedido implements Serializable {
   private static final long serialVersionUID = 1L;
 
+  @EmbeddedId
   private ItemPedidoPK id = new ItemPedidoPK();
 
+  @Column
   private Double desconto;
+
+  @Column
   private Integer quantidade;
+
+  @Column
   private Double preco;
 
   public ItemPedido() {
