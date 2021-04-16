@@ -4,9 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table
@@ -21,7 +19,7 @@ public class Produto implements Serializable {
   private String nome;
 
   @Column
-  private Double preço;
+  private Double preco;
 
   @JsonBackReference
   @ManyToMany
@@ -30,15 +28,32 @@ public class Produto implements Serializable {
       joinColumns = @JoinColumn(name = "produto_id"),
       inverseJoinColumns = @JoinColumn(name = "categoria_id")
   )
+
+  private Set<ItemPedido> itens = new HashSet<>();
+
   private List<Categoria> categorias = new ArrayList<>();
 
   public Produto() {
   }
 
-  public Produto(Integer id, String nome, Double preço) {
+  public Produto(Integer id, String nome, Double preco) {
     this.id = id;
     this.nome = nome;
-    this.preço = preço;
+    this.preco = preco;
+  }
+
+  public List<Pedido> getPedidos() {
+    List<Pedido> lista = new ArrayList<>();
+    itens.forEach(itemPedido -> lista.add(itemPedido.getPedido()));
+    return lista;
+  }
+
+  public Set<ItemPedido> getItens() {
+    return itens;
+  }
+
+  public void setItens(Set<ItemPedido> itens) {
+    this.itens = itens;
   }
 
   public Integer getId() {
@@ -57,12 +72,12 @@ public class Produto implements Serializable {
     this.nome = nome;
   }
 
-  public Double getPreço() {
-    return preço;
+  public Double getPreco() {
+    return preco;
   }
 
-  public void setPreço(Double preço) {
-    this.preço = preço;
+  public void setPreco(Double preco) {
+    this.preco = preco;
   }
 
   public List<Categoria> getCategorias() {

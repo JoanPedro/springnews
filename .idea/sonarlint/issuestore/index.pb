@@ -45,3 +45,17 @@ i
 9src/main/java/reviews/main/resources/ClienteResource.java,0\2\02c4730cf25b810ef22fb1b95e384a019e46eaeb
 g
 7src/main/java/reviews/main/services/ClienteService.java,a\c\ac22ede04df9e046d39d4f02d0cc3a47d004c558
+l
+<src/main/java/reviews/main/domain/enums/EstadoPagamento.java,e\b\eb09cdeea913d34080bd3c5c419d053e3839bb32
+i
+9src/main/java/reviews/main/domain/PagamentoComBoleto.java,7\4\74d29c618f77d2fc27bc861433fbfaccfba90eb4
+i
+9src/main/java/reviews/main/domain/PagamentoComCartao.java,9\f\9f9e9f4fab7e20633a31bfb714536b8e94c501e9
+p
+@src/main/java/reviews/main/repositories/PagamentoRepository.java,9\5\950bb6a6f56966cf99a76dd4eb8d2fe65508e394
+]
+-src/main/java/reviews/main/domain/Pedido.java,c\3\c3043ec89e459eaabe6df27f1d1fe42c6259be6a
+m
+=src/main/java/reviews/main/repositories/PedidoRepository.java,7\d\7de2f6575f621dab8fd17927f8363792c115d8e5
+`
+0src/main/java/reviews/main/domain/Pagamento.java,d\0\d0b4e4ce54da8e539617d33492c79d8da41884d8
