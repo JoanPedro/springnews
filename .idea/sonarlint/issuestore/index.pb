@@ -59,3 +59,9 @@ m
 =src/main/java/reviews/main/repositories/PedidoRepository.java,7\d\7de2f6575f621dab8fd17927f8363792c115d8e5
 `
 0src/main/java/reviews/main/domain/Pagamento.java,d\0\d0b4e4ce54da8e539617d33492c79d8da41884d8
+a
+1src/main/java/reviews/main/domain/ItemPedido.java,d\4\d425464a7d4841dd0623d2708d4bc62ba82aef89
+c
+3src/main/java/reviews/main/domain/ItemPedidoPK.java,e\3\e3de4ae88242119fca1edb35f218525920b08198
+q
+Asrc/main/java/reviews/main/repositories/ItemPedidoRepository.java,2\5\253e93a691f8dc5b3c9194994f892ac95f85464d
