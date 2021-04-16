@@ -1,5 +1,6 @@
 package reviews.main.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import reviews.main.domain.enums.EstadoPagamento;
 
 import javax.persistence.Column;
@@ -12,9 +13,11 @@ import java.util.Date;
 public class PagamentoComBoleto extends Pagamento {
   private static final long serialVersionUID = 1L;
 
+  @JsonFormat(pattern = "dd/MM/yyyy")
   @Column
   private Date dataVencimento;
 
+  @JsonFormat(pattern = "dd/MM/yyyy")
   @Column
   private Date dataPagamento;
 
