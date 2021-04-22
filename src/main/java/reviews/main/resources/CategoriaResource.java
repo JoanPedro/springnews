@@ -7,6 +7,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import reviews.main.domain.Categoria;
 import reviews.main.services.CategoriaService;
 
+import javax.websocket.server.PathParam;
 import java.net.URI;
 
 @RestController
@@ -24,7 +25,7 @@ public class CategoriaResource {
 
   @PostMapping()
   public ResponseEntity<Void> insert(@RequestBody Categoria obj) {
-    Categoria resultObj = service.insert(obj);
+    Categoria resultObj = this.service.insert(obj);
     /* Created Status Code: 201. Implies that:
       Pattern that returns an URI that point to the new object. */
     URI uri = ServletUriComponentsBuilder
@@ -33,5 +34,13 @@ public class CategoriaResource {
         .buildAndExpand(resultObj.getId())
         .toUri();
     return ResponseEntity.created(uri).build();
+  }
+
+  @PutMapping(value = "/{id}")
+  public ResponseEntity<Void> update(@PathVariable Integer id, @RequestBody Categoria obj) {
+    // Ensure update obj by id. Case id is null, its perform an create!
+    obj.setId(id);
+    this.service.update(obj);
+    return ResponseEntity.noContent().build();
   }
 }

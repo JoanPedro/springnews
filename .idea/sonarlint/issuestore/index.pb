@@ -69,3 +69,5 @@ f
 6src/main/java/reviews/main/services/PedidoService.java,9\a\9adedce3a6f3b32ec660635e8010d57e832e4e34
 h
 8src/main/java/reviews/main/resources/PedidoResource.java,9\a\9a35415361a0eb79f5392a78d2146a2e0768fa03
+`
+0src/main/java/reviews/main/dto/CategoriaDTO.java,1\e\1eec21fd6656c553d0c5b570821eb209e24893e1
