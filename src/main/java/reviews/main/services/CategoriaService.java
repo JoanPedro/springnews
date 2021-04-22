@@ -1,9 +1,11 @@
 package reviews.main.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import reviews.main.domain.Categoria;
 import reviews.main.repositories.CategoriaRepository;
+import reviews.main.services.exceptions.DataIntegrityException;
 import reviews.main.services.exceptions.ObjectNotFoundException;
 
 import java.util.Optional;
@@ -34,6 +36,10 @@ public class CategoriaService {
 
   public void delete(Integer id) {
     this.find(id);
-    this.repository.deleteById(id);
+    try {
+      this.repository.deleteById(id);
+    } catch (DataIntegrityViolationException exception) {
+      throw new DataIntegrityException("Não é possível excluir uma categoria que possui produtos!");
+    }
   }
 }
