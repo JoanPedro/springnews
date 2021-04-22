@@ -8,6 +8,7 @@ import reviews.main.repositories.CategoriaRepository;
 import reviews.main.services.exceptions.DataIntegrityException;
 import reviews.main.services.exceptions.ObjectNotFoundException;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -41,5 +42,9 @@ public class CategoriaService {
     } catch (DataIntegrityViolationException exception) {
       throw new DataIntegrityException("Não é possível excluir uma categoria que possui produtos!");
     }
+  }
+
+  public List<Categoria> findAll() {
+    return this.repository.findAll();
   }
 }

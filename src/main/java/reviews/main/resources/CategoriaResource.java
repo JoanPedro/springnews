@@ -5,10 +5,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import reviews.main.domain.Categoria;
+import reviews.main.dto.CategoriaDTO;
 import reviews.main.services.CategoriaService;
 
 import javax.websocket.server.PathParam;
 import java.net.URI;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/categories")
@@ -48,5 +51,12 @@ public class CategoriaResource {
   public ResponseEntity<Void> delete(@PathVariable Integer id) {
     this.service.delete(id);
     return ResponseEntity.noContent().build();
+  }
+
+  @GetMapping()
+  public ResponseEntity<List<CategoriaDTO>> findAll() {
+    List<Categoria> result = this.service.findAll();
+    List<CategoriaDTO> listDto = result.stream().map(CategoriaDTO::new).collect(Collectors.toList());
+    return ResponseEntity.ok(listDto);
   }
 }
