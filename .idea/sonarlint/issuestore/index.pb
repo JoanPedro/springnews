@@ -65,3 +65,7 @@ c
 3src/main/java/reviews/main/domain/ItemPedidoPK.java,e\3\e3de4ae88242119fca1edb35f218525920b08198
 q
 Asrc/main/java/reviews/main/repositories/ItemPedidoRepository.java,2\5\253e93a691f8dc5b3c9194994f892ac95f85464d
+f
+6src/main/java/reviews/main/services/PedidoService.java,9\a\9adedce3a6f3b32ec660635e8010d57e832e4e34
+h
+8src/main/java/reviews/main/resources/PedidoResource.java,9\a\9a35415361a0eb79f5392a78d2146a2e0768fa03
