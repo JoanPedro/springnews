@@ -27,8 +27,13 @@ public class CategoriaService {
     return this.repository.save(obj);
   }
 
-  public Categoria update(Categoria obj) {
+  public void update(Categoria obj) {
     this.find(obj.getId());
-    return this.repository.save(obj);
+    this.repository.save(obj);
+  }
+
+  public void delete(Integer id) {
+    this.find(id);
+    this.repository.deleteById(id);
   }
 }
