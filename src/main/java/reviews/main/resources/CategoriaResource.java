@@ -1,6 +1,7 @@
 package reviews.main.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -57,6 +58,18 @@ public class CategoriaResource {
   public ResponseEntity<List<CategoriaDTO>> findAll() {
     List<Categoria> result = this.service.findAll();
     List<CategoriaDTO> listDto = result.stream().map(CategoriaDTO::new).collect(Collectors.toList());
+    return ResponseEntity.ok(listDto);
+  }
+
+  @GetMapping(value = "/page")
+  public ResponseEntity<Page<CategoriaDTO>> findPage(
+      @RequestParam(value = "page", defaultValue = "0") Integer page,
+      @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,
+      @RequestParam(value = "orderBy", defaultValue = "nome") String orderBy,
+      @RequestParam(value = "direction", defaultValue = "ASC") String direction
+  ) {
+    Page<Categoria> result = this.service.findPage(page, linesPerPage, orderBy, direction);
+    Page<CategoriaDTO> listDto = result.map(CategoriaDTO::new);
     return ResponseEntity.ok(listDto);
   }
 }
