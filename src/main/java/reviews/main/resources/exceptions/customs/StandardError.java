@@ -1,4 +1,4 @@
-package reviews.main.resources.exceptions;
+package reviews.main.resources.exceptions.customs;
 
 import java.io.Serializable;
 
