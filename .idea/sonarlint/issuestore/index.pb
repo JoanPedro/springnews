@@ -71,3 +71,5 @@ h
 8src/main/java/reviews/main/resources/PedidoResource.java,9\a\9a35415361a0eb79f5392a78d2146a2e0768fa03
 `
 0src/main/java/reviews/main/dto/CategoriaDTO.java,1\e\1eec21fd6656c553d0c5b570821eb209e24893e1
+z
+Jsrc/main/java/reviews/main/services/exceptions/DataIntegrityException.java,5\1\5130833a2633ab28059f8467c6634ccd70e84b08

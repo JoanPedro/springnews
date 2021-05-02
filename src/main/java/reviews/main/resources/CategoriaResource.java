@@ -9,7 +9,7 @@ import reviews.main.domain.Categoria;
 import reviews.main.dto.CategoriaDTO;
 import reviews.main.services.CategoriaService;
 
-import javax.websocket.server.PathParam;
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,8 +28,9 @@ public class CategoriaResource {
   }
 
   @PostMapping()
-  public ResponseEntity<Void> insert(@RequestBody Categoria obj) {
-    Categoria resultObj = this.service.insert(obj);
+  public ResponseEntity<Void> insert(@Valid @RequestBody CategoriaDTO objDTO) {
+    Categoria objMapper = this.service.fromDTO(objDTO);
+    Categoria resultObj = this.service.insert(objMapper);
     /* Created Status Code: 201. Implies that:
       Pattern that returns an URI that point to the new object. */
     URI uri = ServletUriComponentsBuilder
@@ -41,10 +42,11 @@ public class CategoriaResource {
   }
 
   @PutMapping(value = "/{id}")
-  public ResponseEntity<Void> update(@PathVariable Integer id, @RequestBody Categoria obj) {
+  public ResponseEntity<Void> update(@Valid @RequestBody CategoriaDTO objDTO, @PathVariable Integer id) {
+    Categoria objMapper = this.service.fromDTO(objDTO);
     // Ensure update obj by id. Case id is null, its perform an create!
-    obj.setId(id);
-    this.service.update(obj);
+    objMapper.setId(id);
+    this.service.update(objMapper);
     return ResponseEntity.noContent().build();
   }
 
