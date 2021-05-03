@@ -1,6 +1,7 @@
 package reviews.main.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import reviews.main.domain.enums.EstadoPagamento;
 
 import javax.persistence.Column;
@@ -10,6 +11,7 @@ import java.util.Date;
 
 @Entity
 @Table
+@JsonTypeName("pagamentoComBoleto")
 public class PagamentoComBoleto extends Pagamento {
   private static final long serialVersionUID = 1L;
 
@@ -21,7 +23,8 @@ public class PagamentoComBoleto extends Pagamento {
   @Column
   private Date dataPagamento;
 
-  public PagamentoComBoleto() {}
+  public PagamentoComBoleto() {
+  }
 
   public PagamentoComBoleto(Integer id, EstadoPagamento estado, Pedido pedido, Date dataVencimento, Date dataPagamento) {
     super(id, estado, pedido);
