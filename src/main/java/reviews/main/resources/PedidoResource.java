@@ -3,9 +3,7 @@ package reviews.main.resources;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import reviews.main.domain.Cliente;
 import reviews.main.domain.Pedido;
-import reviews.main.services.ClienteService;
 import reviews.main.services.PedidoService;
 
 @RestController
