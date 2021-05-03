@@ -1,26 +1,49 @@
 package reviews.main.dto;
 
+import reviews.main.services.validation.ClienteInsert;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
+@ClienteInsert
 public class ClienteNewDto implements Serializable {
   private static final long serialVersionUID = 1L;
 
+  @NotEmpty(message = "Preenchimento obrigatório!")
+  @Size(min = 5, max = 120, message = "O nome inserido deve conter entre 5 a 120 caracteres!")
   private String nome;
 
+  @NotEmpty(message = "Preenchimento obrigatório!")
+  @Email(message = "Email inválido!")
   private String email;
 
-  private String logradouro;
-
-  private String numero;
+  @NotEmpty(message = "Preenchimento obrigatório!")
+  private String cpfOuCnpj;
 
   private Integer tipo;
-  private String cpfOuCnpj;
+
+  @NotEmpty(message = "Preenchimento obrigatório!")
+  private String logradouro;
+
+  @NotEmpty(message = "Preenchimento obrigatório!")
+  private String numero;
+
   private String complemento;
+
   private String bairro;
+
+  @NotEmpty(message = "Preenchimento obrigatório!")
   private String cep;
+
+  @NotEmpty(message = "Preenchimento obrigatório!")
   private String telefone1;
+
   private String telefone2;
+
   private String telefone3;
+
   private Integer cidadeId;
 
   public ClienteNewDto() {
