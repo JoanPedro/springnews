@@ -21,8 +21,6 @@ n
 Ksrc/main/java/reviews/main/services/exceptions/ObjectNotFoundException.java,0\9\091e22606dbcfa45f2d8dea23c77d8bf9255cf4d
 }
 Msrc/main/java/reviews/main/resources/exceptions/ResourceExceptionHandler.java,d\4\d4122520385cf6f5278355b5fa549407547ed119
-r
-Bsrc/main/java/reviews/main/resources/exceptions/StandardError.java,2\d\2d48ee978ff3581f21948effcd95900b461b4972
 ]
 -src/main/java/reviews/main/domain/Cidade.java,5\3\539d8fa5414a8fc313a6ed06d6adbcb05163b0a7
 ]
@@ -73,3 +71,11 @@ h
 0src/main/java/reviews/main/dto/CategoriaDTO.java,1\e\1eec21fd6656c553d0c5b570821eb209e24893e1
 z
 Jsrc/main/java/reviews/main/services/exceptions/DataIntegrityException.java,5\1\5130833a2633ab28059f8467c6634ccd70e84b08
+y
+Isrc/main/java/reviews/main/resources/exceptions/helpers/FieldMessage.java,5\e\5ee22768e1b30bafe72d92cb22fc339bebd9860e
+z
+Jsrc/main/java/reviews/main/resources/exceptions/customs/StandardError.java,0\7\07f68dc1c4e24309603b7f436f604e6d9c450a7c
+|
+Lsrc/main/java/reviews/main/resources/exceptions/customs/ValidationError.java,9\4\949e4f27f102327e3fe8bc707d27120afd660e9c
+^
+.src/main/java/reviews/main/dto/ClienteDTO.java,5\2\52fb589e4a893f3d928abfb80142e3bf147ba63e

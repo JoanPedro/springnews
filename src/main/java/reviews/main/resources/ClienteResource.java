@@ -4,11 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import reviews.main.domain.Cliente;
 import reviews.main.dto.ClienteDTO;
+import reviews.main.dto.ClienteNewDto;
 import reviews.main.services.ClienteService;
 
 import javax.validation.Valid;
+import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,6 +27,20 @@ public class ClienteResource {
   public ResponseEntity<Cliente> find(@PathVariable Integer id) {
     Cliente result = this.service.find(id);
     return ResponseEntity.ok(result);
+  }
+
+  @PostMapping()
+  public ResponseEntity<Void> insert(@Valid @RequestBody ClienteNewDto objDTO) {
+    Cliente objMapper = this.service.fromDTO(objDTO);
+    Cliente resultObj = this.service.insert(objMapper);
+    /* Created Status Code: 201. Implies that:
+      Pattern that returns an URI that point to the new object. */
+    URI uri = ServletUriComponentsBuilder
+        .fromCurrentRequest()
+        .path("/{id}")
+        .buildAndExpand(resultObj.getId())
+        .toUri();
+    return ResponseEntity.created(uri).build();
   }
 
   @PutMapping(value = "/{id}")
