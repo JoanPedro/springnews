@@ -38,6 +38,7 @@ public class ClienteService {
     );
   }
 
+  @Transactional
   public Cliente insert(Cliente obj) {
     // Ensure new obj by id. Case id not null, its perform an update!
     obj.setId(null);
@@ -57,7 +58,7 @@ public class ClienteService {
     try {
       this.repository.deleteById(id);
     } catch (DataIntegrityViolationException exception) {
-      throw new DataIntegrityException("Não é possível excluir porque há entidades relacionadas!");
+      throw new DataIntegrityException("Não é possível excluir porque há pedidos relacionados!");
     }
   }
 
@@ -74,7 +75,6 @@ public class ClienteService {
     return new Cliente(objDTO.getId(), objDTO.getNome(), objDTO.getEmail(), null, null);
   }
 
-  @Transactional
   public Cliente fromDTO(ClienteNewDto objDTO) {
     Cliente cliente = new Cliente(null, objDTO.getNome(), objDTO.getEmail(), objDTO.getCpfOuCnpj(), TipoCliente.toEnum(objDTO.getTipo()));
     Cidade cidade = new Cidade(objDTO.getCidadeId(), null, null);
