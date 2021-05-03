@@ -1,12 +1,14 @@
 package reviews.main.dto;
 
 import reviews.main.domain.Cliente;
+import reviews.main.services.validation.ClienteUpdate;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
+@ClienteUpdate
 public class ClienteDTO implements Serializable {
   private static final long serialVersionUID = 1L;
 
