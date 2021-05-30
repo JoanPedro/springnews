@@ -126,4 +126,11 @@ public class Cliente implements Serializable {
   public int hashCode() {
     return Objects.hash(id);
   }
+
+  @Override
+  public String toString() {
+    final StringBuilder sb = new StringBuilder();
+    sb.append(getNome());
+    return sb.toString();
+  }
 }
