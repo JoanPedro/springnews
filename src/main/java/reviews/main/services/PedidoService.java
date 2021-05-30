@@ -9,6 +9,7 @@ import reviews.main.domain.enums.EstadoPagamento;
 import reviews.main.repositories.ItemPedidoRepository;
 import reviews.main.repositories.PagamentoRepository;
 import reviews.main.repositories.PedidoRepository;
+import reviews.main.services.email.EmailService;
 import reviews.main.services.exceptions.ObjectNotFoundException;
 
 import java.util.Date;
@@ -34,6 +35,9 @@ public class PedidoService {
 
   @Autowired
   private ItemPedidoRepository itemPedidoRepository;
+
+  @Autowired
+  private EmailService emailService;
 
   public Pedido find(Integer id) {
     Optional<Pedido> result = this.repository.findById(id);
@@ -65,7 +69,8 @@ public class PedidoService {
     }
 
     this.itemPedidoRepository.saveAll(result.getItens());
-    System.out.println(result);
+    emailService.sendOrderConfirmationEmail(result);
+
     return result;
   }
 }

@@ -22,6 +22,11 @@
       <option name="url" value="https://repo1.maven.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="snapshots" />
+      <option name="name" value="bb-maven-repo" />
+      <option name="url" value="https://atf.intranet.bb.com.br:443/artifactory/bb-maven-repo" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
@@ -30,6 +35,11 @@
       <option name="id" value="spring-milestone" />
       <option name="name" value="Spring Milestone" />
       <option name="url" value="https://repo.spring.io/milestone" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="bb-maven-repo" />
+      <option name="url" value="https://atf.intranet.bb.com.br:443/artifactory/bb-maven-repo" />
     </remote-repository>
   </component>
 </project>
